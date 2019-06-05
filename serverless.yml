@@ -1,0 +1,21 @@
+service: mes-recettes
+
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: eu-west-1
+
+functions:
+  homepage:
+    handler: handler.homepage
+    events:
+      - http:
+          path: /
+          method: get
+  recipeDetails:
+    handler: handler.recipeDetails
+    events:
+      - http:
+          path: /recipe/{recipeId}
+          method: get

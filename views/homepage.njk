@@ -1,0 +1,23 @@
+{% extends "pagelayout.njk" %}
+
+
+{% block content %}
+  {% for recipe in recipes %}
+    <div class="col s12">
+      <h2 class="header">{{ recipe.name }}</h2>
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="{{ recipe.image }}">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ recipe.description }}</p>
+          </div>
+          <div class="card-action">
+            <a href="/dev/recipe/{{ recipe.id }}">Discover the recipe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
